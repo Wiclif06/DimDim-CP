@@ -1,0 +1,251 @@
+{\rtf1\ansi\ansicpg1252\deff0\uc1
+{\fonttbl{\f0 Calibri;}{\f1 Consolas;}}
+{\colortbl;\red17\green44\blue72;\red0\green103\blue158;\red255\green221\blue0;\red238\green244\blue248;\red54\green60\blue68;\red255\green249\blue218;}
+\paperw11906\paperh16838\margl1000\margr1000\margt1000\margb1000\viewkind4\f0\fs22
+{\header {\pard\widctlpar\f0\fs18\cf1\qr\sa100 DIMDIM  |  CP5  |  GUIA DE GRAVA\u199?\u195?O\par}
+}
+{\footer {\pard\qc\f0\fs18\cf5 DimDim - Roteiro de grava\u231?\u227?o  |  {\field{\*\fldinst PAGE}{\fldrslt 1}}\par}}
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn DIMDIM | ROTEIRO DE GRAVA\u199?\u195?O\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 CP5 \u8226? DevOps Tools & Cloud Computing\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Da implanta\u231?\u227?o \u224? demonstra\u231?\u227?o completa\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Guia de tela, comandos e falas para uma grava\u231?\u227?o cont\u237?nua.\par}
+{\pard\widctlpar\f0\fs20\cf1\cb6\li120\ri120\sb90\sa140\sl245\slmult1 Este roteiro foi preparado a partir do README, do c\u243?digo no GitHub e do ensaio realizado. O roteiro_video_cp5.docx e o guia_execucao_cp5.docx originais n\u227?o puderam ser lidos nesta sess\u227?o. Confira com eles eventuais limites de tempo, ordem e exig\u234?ncias adicionais.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Equipe\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Felipe Wiclif Leal da Silva \u8212? RM 563901\line Deryk de Souza Queiroz \u8212? RM 563412\line Lucas Gon\u231?alves Viana \u8212? RM 563254\line Vinicius Paschoeto da Silva \u8212? RM 563089\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Reposit\u243?rio\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 https://github.com/Wiclif06/DimDim-CP\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Configura\u231?\u227?o que funcionou no ensaio\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Regi\u227?o: canadacentral\line Java 17 + Spring Boot 3.4\line App Service Linux B1 + Azure SQL Basic\line DDL pelo Query editor, pois sqlcmd n\u227?o estava instalado.\par}
+{\pard\widctlpar\f0\fs20\cf1\cb6\li120\ri120\sb90\sa140\sl245\slmult1 Os recursos do ensaio foram criados e implantados. N\u227?o recebemos confirma\u231?\u227?o de exclus\u227?o. Se continuam ativos, ainda podem consumir cr\u233?dito.\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Como usar: acompanhe a ordem das p\u225?ginas. Copie somente o conte\u250?do dos blocos de c\u243?digo. Os textos em azul s\u227?o falas sugeridas; adapte \u224? sua maneira de falar.\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn 01 | PREPARA\u199?\u195?O ANTES DE GRAVAR\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Concluir o ensaio\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Cadastro, leitura e atualiza\u231?\u227?o pelas telas e persist\u234?ncia nas duas tabelas j\u225? foram observados no ensaio. Ainda falta validar exclus\u245?es, Swagger e telemetria. Fa\u231?a essas verifica\u231?\u245?es antes da grava\u231?\u227?o definitiva.\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 N\u227?o comece a grava\u231?\u227?o contando com o Application Insights sem dados: abra o recurso, gere requisi\u231?\u245?es e confirme que aparecem requisi\u231?\u245?es e depend\u234?ncias SQL.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Organizar a tela\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Abra estas abas: GitHub; portal Azure com Cloud Shell Bash; SQL Query editor; aplicativo; Swagger; Application Insights. Os nomes e links da nova implanta\u231?\u227?o ser\u227?o obtidos pelo script, pois o sufixo pode mudar.\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Prepare o gravador, fa\u231?a um teste curto do microfone e confira se o texto est\u225? leg\u237?vel. Desative notifica\u231?\u245?es. Mantenha este roteiro em outra tela ou dispositivo. Use dados fict\u237?cios.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Senha\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Escolha uma senha nova para o SQL, com pelo menos 12 caracteres, mai\u250?scula, min\u250?scula, n\u250?mero e s\u237?mbolo. Guarde-a fora da grava\u231?\u227?o. O comando read -s oculta a digita\u231?\u227?o. N\u227?o mostre senhas, tokens ou valores das App Settings.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Se vai recriar os recursos para gravar\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Ap\u243?s concluir o ensaio, use o script 99 e confirme a exclus\u227?o. A cria\u231?\u227?o do v\u237?deo deve come\u231?ar sem o grupo de recursos do ensaio. N\u227?o apague outros grupos.\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 bash scripts/99-limpar-recursos.sh\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Quando aparecer a pergunta do script, digite somente: rg-dimdim-cp5\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 az group wait --deleted --name rg-dimdim-cp5\line az group exists --name rg-dimdim-cp5\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Resultado esperado da \u250?ltima consulta: false. A exclus\u227?o \u233? ass\u237?ncrona; a mensagem 'Exclus\u227?o iniciada' sozinha n\u227?o confirma que terminou.\par}
+{\pard\widctlpar\f0\fs20\cf1\cb6\li120\ri120\sb90\sa140\sl245\slmult1 Cloud Shell est\u225? em sess\u227?o ef\u234?mera. Se a sess\u227?o reiniciar, os arquivos locais e vari\u225?veis podem desaparecer. Depois que criar recursos, mantenha a mesma sess\u227?o at\u233? concluir a demonstra\u231?\u227?o e a limpeza.\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn 02 | ABERTURA, GITHUB E ARQUITETURA\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Come\u231?ar a grava\u231?\u227?o cont\u237?nua\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Inicie a captura. A dura\u231?\u227?o depende das esperas da Azure; n\u227?o h\u225? limite confirmado neste documento. N\u227?o fa\u231?a cortes nem acelera\u231?\u227?o sem autoriza\u231?\u227?o no roteiro original.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: Ol\u225?. Somos a equipe respons\u225?vel pelo DimDim, uma aplica\u231?\u227?o de cadastro de clientes e pagamentos. Vamos demonstrar a implanta\u231?\u227?o na Azure, as opera\u231?\u245?es pelas telas e pela API, a persist\u234?ncia no banco e o monitoramento.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Tela: reposit\u243?rio p\u250?blico\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Abra https://github.com/Wiclif06/DimDim-CP. Mostre o endere\u231?o, a visibilidade p\u250?blica, o README, pom.xml, src, scripts e docs.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: O reposit\u243?rio re\u250?ne o c\u243?digo Java, a documenta\u231?\u227?o, os exemplos de JSON e os scripts de cria\u231?\u227?o, implanta\u231?\u227?o, consulta e limpeza dos recursos.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Tela: imagem de arquitetura\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Abra docs/arquitetura.png. O grupo \u233? rg-dimdim-cp5. O aplicativo roda no App Service Linux; o Azure SQL armazena os dados; Application Insights e Log Analytics recebem a telemetria.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: Clientes e pagamentos t\u234?m uma rela\u231?\u227?o de um para muitos. Cada pagamento pertence a um cliente. A aplica\u231?\u227?o usa Java 17 e Spring Boot, oferece telas Thymeleaf e uma API REST com Swagger. A regi\u227?o escolhida \u233? Canada Central, que funcionou no ensaio.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Tela: estrutura dos scripts\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Mostre scripts/01-criar-recursos.sh, scripts/ddl_dimdim.sql, scripts/03-deploy-app.sh e scripts/99-limpar-recursos.sh. Explique o prop\u243?sito; n\u227?o \u233? necess\u225?rio ler todas as linhas.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: O provisionamento e o deploy usam Azure CLI. O SQL das tabelas \u233? versionado. As credenciais s\u227?o informadas no terminal e configuradas no ambiente do aplicativo.\par}
+{\pard\widctlpar\f0\fs20\cf1\cb6\li120\ri120\sb90\sa140\sl245\slmult1 O README ainda tem exemplos de clone e cd com placeholders. Na grava\u231?\u227?o use os comandos corretos deste roteiro: DimDim-CP, respeitando mai\u250?sculas e min\u250?sculas.\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn 03 | CLOUD SHELL E CRIA\u199?\u195?O DOS RECURSOS\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Tela: portal Azure / Cloud Shell Bash\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Se a pasta j\u225? existir, entre nela. Se n\u227?o existir, clone o projeto. N\u227?o tente clonar novamente sobre uma pasta existente.\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 git clone https://github.com/Wiclif06/DimDim-CP.git\line cd DimDim-CP\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Se j\u225? estiver na pasta, use apenas git pull para atualizar antes de iniciar os scripts.\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 az account show --query "\{nome:name, estado:state\}" -o table\line export LOCATION=canadacentral\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: A assinatura utilizada est\u225? habilitada. No ensaio, Brazil South foi bloqueada por pol\u237?tica, e East US e East US 2 recusaram novos servidores SQL. Canada Central permitiu a cria\u231?\u227?o.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Definir a senha sem exibi-la\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 read -r -s -p "Senha do SQL: " SQL_ADMIN_PASSWORD; export SQL_ADMIN_PASSWORD; echo\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Digite a senha e pressione Enter. N\u227?o explique qual senha est\u225? usando e n\u227?o a cole como comando.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Criar os recursos\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 bash scripts/01-criar-recursos.sh\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: Este script registra os provedores necess\u225?rios e cria o grupo de recursos, o servidor e banco SQL, o workspace de logs, o Application Insights, o plano B1 e o Web App. Tamb\u233?m configura a conex\u227?o da aplica\u231?\u227?o com o banco.\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Aguarde sem cortar. Mostre as etapas e a mensagem final de sucesso. Se ocorrer erro, siga a se\u231?\u227?o de recupera\u231?\u227?o antes de continuar.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Guardar os nomes da execu\u231?\u227?o\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 source scripts/00-variaveis.sh\line printf 'Web App: %s\\nSQL Server: %s\\nInsights: %s\\n' "$WEBAPP" "$SQL_SERVER" "$APPI"\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Use estes nomes nas buscas do portal. app-dimdim-09941 foi o nome do ensaio; uma nova implanta\u231?\u227?o pode gerar outro. N\u227?o fixe o link antigo na grava\u231?\u227?o.\par}
+{\pard\widctlpar\f0\fs20\cf1\cb6\li120\ri120\sb90\sa140\sl245\slmult1 A partir da cria\u231?\u227?o, os recursos ativos consomem cr\u233?dito. N\u227?o encerre a sess\u227?o deixando a limpeza para depois sem confirmar a situa\u231?\u227?o.\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn 04 | CRIAR AS TABELAS PELO QUERY EDITOR\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Tela: banco dimdimdb\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Na busca GLOBAL do topo do portal, digite dimdimdb e abra o banco. No menu \u224? esquerda, clique em Query editor.\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Escolha Autentica\u231?\u227?o do SQL. Usu\u225?rio: dimdimadmin. Use a senha definida no terminal. Se o IP estiver bloqueado, clique em Allowlist IP e aguarde a atualiza\u231?\u227?o, depois tente novamente.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: Nesta sess\u227?o, sqlcmd n\u227?o est\u225? instalado. Por isso executamos o mesmo DDL versionado pelo editor de consultas do portal, uma alternativa prevista no README.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Executar o DDL\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Abra o link abaixo em outra aba, copie o arquivo inteiro e cole em Nova consulta. O c\u243?digo completo tamb\u233?m est\u225? no ap\u234?ndice deste roteiro.\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 https://raw.githubusercontent.com/Wiclif06/DimDim-CP/main/scripts/ddl_dimdim.sql\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Clique em Executar. Aguarde 'Consulta executada com sucesso'. Zero linhas afetadas \u233? normal para cria\u231?\u227?o de tabelas.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Confirmar as duas tabelas\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 SELECT TABLE_SCHEMA, TABLE_NAME\line FROM INFORMATION_SCHEMA.TABLES\line WHERE TABLE_NAME IN ('TB_DD_CLIENTE', 'TB_DD_PAGAMENTO');\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: As duas tabelas foram criadas. Clientes t\u234?m chave prim\u225?ria, e-mail e CPF \u250?nicos. Pagamentos t\u234?m uma chave estrangeira para clientes e valida\u231?\u245?es de valor, m\u233?todo e status.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Confirmar o relacionamento\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 SELECT name AS chave_estrangeira,\line        OBJECT_NAME(parent_object_id) AS tabela_origem,\line        OBJECT_NAME(referenced_object_id) AS tabela_destino\line FROM sys.foreign_keys\line WHERE parent_object_id = OBJECT_ID('dbo.TB_DD_PAGAMENTO');\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Resultado esperado: FK_TB_DD_PAGAMENTO_CLIENTE, de TB_DD_PAGAMENTO para TB_DD_CLIENTE.\par}
+{\pard\widctlpar\f0\fs20\cf1\cb6\li120\ri120\sb90\sa140\sl245\slmult1 N\u227?o \u233? necess\u225?rio executar scripts/02-criar-tabelas.sh de novo se o DDL j\u225? foi executado no editor.\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn 05 | COMPILA\u199?\u195?O E DEPLOY\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Tela: Cloud Shell\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 bash scripts/03-deploy-app.sh\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: O script compila o projeto com Maven, gera target/dimdim.jar e publica o arquivo no App Service com az webapp deploy.\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Mostre BUILD SUCCESS. O script usa -DskipTests; n\u227?o diga que testes automatizados passaram. Esta evid\u234?ncia \u233? de compila\u231?\u227?o e empacotamento.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: O pacote foi gerado. Agora aguardamos a implanta\u231?\u227?o e a inicializa\u231?\u227?o. O script verifica o endpoint de sa\u250?de at\u233? receber HTTP 200.\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Mantenha a grava\u231?\u227?o durante a espera. O deploy do ensaio levou alguns minutos. Aguarde 'Aplicacao no ar! (HTTP 200)'.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Mostrar as URLs corretas\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 source scripts/00-variaveis.sh\line printf 'Aplicativo: https://%s.azurewebsites.net/\\n' "$WEBAPP"\line printf 'Swagger: https://%s.azurewebsites.net/swagger-ui.html\\n' "$WEBAPP"\line printf 'Health: https://%s.azurewebsites.net/actuator/health\\n' "$WEBAPP"\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Abra o aplicativo e a URL /actuator/health. Esperado: p\u225?gina inicial e status UP no health.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: A aplica\u231?\u227?o est\u225? dispon\u237?vel por HTTPS. O health check respondeu com sucesso. A p\u225?gina inicial exibe as quantidades de clientes e pagamentos.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Portal: recursos da solu\u231?\u227?o\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 az resource list --resource-group rg-dimdim-cp5 --query "[].\{nome:name,tipo:type,regiao:location\}" -o table\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Alternativa visual: abra Grupos de recursos > rg-dimdim-cp5 e mostre a lista. N\u227?o abra os valores de senha das App Settings.\par}
+{\pard\widctlpar\f0\fs20\cf1\cb6\li120\ri120\sb90\sa140\sl245\slmult1 Health e p\u225?gina inicial funcionando n\u227?o comprovam todos os fluxos. As pr\u243?ximas p\u225?ginas demonstram as opera\u231?\u245?es e a persist\u234?ncia.\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn 06 | CRUD PELAS TELAS: CRIAR E LER\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Clientes: cria\u231?\u227?o e leitura\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 No aplicativo, clique em Novo cliente. Preencha:\line Nome: Cliente Video CP5\line E-mail: cliente.video.cp5@example.com\line CPF fict\u237?cio: 12345678901\line Telefone: 11999999999\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Salve. Mostre a mensagem de sucesso e a listagem. Anote o ID real do cliente; ele pode n\u227?o ser 1.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: Cadastramos um cliente fict\u237?cio pela interface. Ele aparece na listagem com um identificador gerado pelo banco.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Query editor: comprovar a grava\u231?\u227?o\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 SELECT id_cliente, nome, email, cpf, telefone, dt_cadastro\line FROM dbo.TB_DD_CLIENTE\line ORDER BY id_cliente;\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Mostre a linha do cliente, ampliando a coluna nome se estiver cortada.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: A consulta confirma que os dados foram persistidos no Azure SQL, e n\u227?o apenas mostrados na tela.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Pagamentos: cria\u231?\u227?o e leitura\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 No aplicativo, abra Pagamentos > Novo pagamento. Selecione Cliente Video CP5.\line Descri\u231?\u227?o: Pagamento video CP5\line Valor: 50,00 (ou 50.00 se o campo aceitar ponto)\line M\u233?todo: PIX\line Status: PENDENTE\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Salve. Mostre o pagamento na listagem e anote o ID real.\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 SELECT id_pagamento, id_cliente, descricao, valor,\line        metodo, status, dt_pagamento\line FROM dbo.TB_DD_PAGAMENTO\line ORDER BY id_pagamento;\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: O pagamento est\u225? vinculado ao cliente pela chave estrangeira. A consulta mostra o mesmo valor, m\u233?todo e status informados na interface.\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn 07 | CRUD PELAS TELAS: ATUALIZAR E EXCLUIR\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Atualizar cliente\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Clientes > Editar. Troque o nome para Cliente Video CP5 Atualizado. Salve e mostre a listagem.\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 SELECT id_cliente, nome, telefone FROM dbo.TB_DD_CLIENTE;\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: A altera\u231?\u227?o feita pela interface tamb\u233?m aparece no banco.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Atualizar pagamento\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Pagamentos > Editar. Mude o status de PENDENTE para APROVADO. Salve e mostre a listagem.\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 SELECT id_pagamento, id_cliente, valor, metodo, status\line FROM dbo.TB_DD_PAGAMENTO;\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: O pagamento agora est\u225? aprovado, tanto na aplica\u231?\u227?o quanto no banco.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Excluir em ordem\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Primeiro exclua o pagamento na interface e confirme. Depois consulte o banco:\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 SELECT * FROM dbo.TB_DD_PAGAMENTO;\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Mostre que o registro exclu\u237?do n\u227?o aparece. Se s\u243? havia esse pagamento, a consulta fica vazia.\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Agora exclua o cliente na interface e consulte:\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 SELECT * FROM dbo.TB_DD_CLIENTE;\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: Exclu\u237?mos primeiro o pagamento e depois o cliente, respeitando o relacionamento. As consultas confirmam a remo\u231?\u227?o dos dados.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Regra de relacionamento \u8212? demonstra\u231?\u227?o opcional\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Antes de excluir o pagamento, voc\u234? pode tentar excluir o cliente vinculado. Mostre a recusa e explique que evita deixar pagamentos sem cliente. Depois execute a exclus\u227?o na ordem correta.\par}
+{\pard\widctlpar\f0\fs20\cf1\cb6\li120\ri120\sb90\sa140\sl245\slmult1 Se o roteiro original tiver limite de dura\u231?\u227?o, priorize as evid\u234?ncias obrigat\u243?rias. Este roteiro n\u227?o presume que a demonstra\u231?\u227?o opcional de erro seja exigida.\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn 08 | SWAGGER: CRUD DE CLIENTES\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Como executar cada opera\u231?\u227?o\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Abra /swagger-ui.html no endere\u231?o do Web App desta execu\u231?\u227?o. Expanda a opera\u231?\u227?o, clique em Try it out, preencha os campos e clique em Execute. Mostre o m\u233?todo, caminho, c\u243?digo HTTP e corpo da resposta.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: Al\u233?m das telas, a aplica\u231?\u227?o disponibiliza uma API REST documentada. Vamos executar as mesmas opera\u231?\u245?es pelo Swagger.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn POST /api/clientes \u8212? esperado: 201\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 \{\line   "nome": "Cliente API CP5",\line   "email": "cliente.api.cp5@example.com",\line   "cpf": "11144477735",\line   "telefone": "11988887777"\line \}\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Anote o id retornado. Aqui vamos cham\u225?-lo de ID_CLIENTE_API. N\u227?o use automaticamente 1: a sequ\u234?ncia de IDs n\u227?o reinicia quando os registros s\u227?o exclu\u237?dos.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn GET /api/clientes e GET /api/clientes/\{id\} \u8212? 200\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Execute a listagem. Depois busque o ID_CLIENTE_API e mostre o JSON.\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 SELECT id_cliente, nome, email, cpf, telefone\line FROM dbo.TB_DD_CLIENTE;\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn PUT /api/clientes/\{id\} \u8212? esperado: 200\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Preencha o campo id com o ID_CLIENTE_API e envie:\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 \{\line   "nome": "Cliente API CP5 Atualizado",\line   "email": "cliente.api.cp5@example.com",\line   "cpf": "11144477735",\line   "telefone": "11977776666"\line \}\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Execute novamente GET e a consulta SQL para mostrar a atualiza\u231?\u227?o.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: O POST retornou 201, a leitura retornou 200 e o PUT atualizou o cliente. O banco confirma o mesmo estado.\par}
+{\pard\widctlpar\f0\fs20\cf1\cb6\li120\ri120\sb90\sa140\sl245\slmult1 N\u227?o exclua esse cliente ainda: ele ser\u225? usado na demonstra\u231?\u227?o dos pagamentos pela API.\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn 09 | SWAGGER: CRUD DE PAGAMENTOS E DELETE\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn POST /api/pagamentos \u8212? esperado: 201\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 No JSON abaixo, substitua o n\u250?mero 2 pelo ID_CLIENTE_API real. O 2 \u233? apenas um exemplo num\u233?rico.\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 \{\line   "clienteId": 2,\line   "descricao": "Pagamento API CP5",\line   "valor": 75.50,\line   "metodo": "PIX",\line   "status": "PENDENTE"\line \}\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Execute e anote o id retornado como ID_PAGAMENTO_API.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn GET /api/pagamentos e GET /api/pagamentos/\{id\} \u8212? 200\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Mostre a listagem e a busca pelo ID_PAGAMENTO_API. Consulte o banco:\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 SELECT id_pagamento, id_cliente, descricao, valor, metodo, status\line FROM dbo.TB_DD_PAGAMENTO;\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn PUT /api/pagamentos/\{id\} \u8212? esperado: 200\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Use ID_PAGAMENTO_API no campo id e o ID_CLIENTE_API real no corpo:\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 \{\line   "clienteId": 2,\line   "descricao": "Pagamento API CP5 Atualizado",\line   "valor": 80.00,\line   "metodo": "CARTAO",\line   "status": "APROVADO"\line \}\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Execute GET e a consulta SQL novamente. Mostre valor 80.00, m\u233?todo CARTAO e status APROVADO.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn DELETE \u8212? esperado: 204 e sem corpo\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Execute DELETE /api/pagamentos/\{id\} com o ID_PAGAMENTO_API. Confirme a aus\u234?ncia com GET /api/pagamentos e SELECT. Depois execute DELETE /api/clientes/\{id\} com o ID_CLIENTE_API. Confirme a aus\u234?ncia com GET /api/clientes e SELECT.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: Conclu\u237?mos o CRUD nas duas entidades pela API. DELETE retorna 204 sem conte\u250?do; a consulta e a listagem confirmam a exclus\u227?o.\par}
+{\pard\widctlpar\f0\fs20\cf1\cb6\li120\ri120\sb90\sa140\sl245\slmult1 IDs usados nos campos do Swagger devem ser n\u250?meros reais. N\u227?o cole os nomes ID_CLIENTE_API ou ID_PAGAMENTO_API como valores JSON.\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn 10 | APPLICATION INSIGHTS E LOG ANALYTICS\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Tela: recurso Application Insights\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Busque no portal o nome APPI mostrado pelo script. Na nova execu\u231?\u227?o ele pode ser diferente de appi-dimdim-09941.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: O Application Insights coleta telemetria do aplicativo. Vamos observar requisi\u231?\u245?es, tempos de resposta e chamadas ao banco SQL.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Gerar tr\u225?fego enquanto demonstra\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Abra Live Metrics. Em outra aba atualize Clientes e Pagamentos e execute GETs pelo Swagger. Mostre os indicadores que efetivamente aparecerem. N\u227?o afirme que uma coleta funcionou se o painel estiver vazio.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Application map e pesquisa de transa\u231?\u245?es\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Abra Application map e mostre a liga\u231?\u227?o do aplicativo com o SQL se ela estiver dispon\u237?vel. Abra Transaction search / Pesquisa de transa\u231?\u245?es e selecione uma requisi\u231?\u227?o gerada durante os testes.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Logs no recurso Application Insights\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Selecione um per\u237?odo que inclua a grava\u231?\u227?o, como \u250?ltima hora. Se aparecer a interface de consultas prontas, escolha o editor KQL. Execute:\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 requests\line | where timestamp > ago(1h)\line | project timestamp, name, resultCode, duration\line | order by timestamp desc\line | take 30\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 dependencies\line | where timestamp > ago(1h)\line | where type has "SQL"\line | project timestamp, name, target, duration, success\line | order by timestamp desc\line | take 30\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: Aqui est\u227?o as requisi\u231?\u245?es recebidas, com c\u243?digos de resposta e dura\u231?\u227?o. As depend\u234?ncias mostram as chamadas da aplica\u231?\u227?o ao banco.\par}
+{\pard\widctlpar\f0\fs20\cf1\cb6\li120\ri120\sb90\sa140\sl245\slmult1 A telemetria pode levar alguns minutos. No Log Analytics aberto diretamente, os nomes das tabelas podem ser AppRequests e AppDependencies; o ap\u234?ndice inclui essas consultas. Complete a valida\u231?\u227?o no ensaio antes de gravar.\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn 11 | ENCERRAMENTO E LIMPEZA\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Fala de encerramento\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: Demonstramos a infraestrutura na Azure, a compila\u231?\u227?o e publica\u231?\u227?o do aplicativo, o CRUD de clientes e pagamentos pelas telas e pelo Swagger, a persist\u234?ncia no Azure SQL e o monitoramento. O c\u243?digo e os scripts est\u227?o dispon\u237?veis no reposit\u243?rio p\u250?blico apresentado.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Apagar os recursos\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 A orienta\u231?\u227?o recebida exige apagar os recursos depois do ensaio. Voc\u234? tamb\u233?m pediu a limpeza para evitar consumo de cr\u233?dito. Ap\u243?s concluir a demonstra\u231?\u227?o, fa\u231?a a limpeza; se o professor precisar do site ativo para avaliar, combine esse prazo antes de excluir.\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: Para encerrar, vamos remover o grupo de recursos deste projeto e confirmar a conclus\u227?o da exclus\u227?o.\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 bash scripts/99-limpar-recursos.sh\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Quando o script pedir confirma\u231?\u227?o, digite somente o nome do resource group:\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 rg-dimdim-cp5\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 az group wait --deleted --name rg-dimdim-cp5\line az group exists --name rg-dimdim-cp5\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Mostre false no \u250?ltimo comando. O site ficar\u225? indispon\u237?vel ap\u243?s a exclus\u227?o, o que \u233? esperado.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Se a sess\u227?o ef\u234?mera perdeu o projeto\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Se o script n\u227?o estiver dispon\u237?vel, a alternativa remove especificamente o grupo deste trabalho e aguarda:\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 az group delete --name rg-dimdim-cp5 --yes\line az group exists --name rg-dimdim-cp5\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Depois de parar a grava\u231?\u227?o\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Assista ao arquivo inteiro: \u225?udio, legibilidade, aus\u234?ncia de cortes e todas as evid\u234?ncias. Publique o v\u237?deo no servi\u231?o aceito pelo professor e teste o link com a permiss\u227?o correta.\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Preencha o link do v\u237?deo no README e no documento de entrega. Gere o PDF com o nome solicitado <nome_grupo>_webapp.pdf, usando o identificador exigido pelo professor. S\u243? o representante faz o upload no Teams.\par}
+{\pard\widctlpar\f0\fs20\cf1\cb6\li120\ri120\sb90\sa140\sl245\slmult1 Este roteiro de grava\u231?\u227?o n\u227?o substitui o documento de entrega. Remover o campo 'Grupo' do README n\u227?o altera automaticamente a exig\u234?ncia de nome do PDF.\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn AP\u202?NDICE A | DDL \u8212? CLIENTES\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Copie este bloco e o bloco de pagamentos da pr\u243?xima p\u225?gina para a mesma consulta. Execute ambos no banco dimdimdb.\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 IF OBJECT_ID(N'dbo.TB_DD_CLIENTE', N'U') IS NULL\line BEGIN\line     CREATE TABLE dbo.TB_DD_CLIENTE (\line         id_cliente   BIGINT        IDENTITY(1,1) NOT NULL,\line         nome         NVARCHAR(100) NOT NULL,\line         email        NVARCHAR(120) NOT NULL,\line         cpf          CHAR(11)      NOT NULL,\line         telefone     NVARCHAR(20)  NULL,\line         dt_cadastro  DATETIME2(3)  NOT NULL CONSTRAINT DF_TB_DD_CLIENTE_DT DEFAULT SYSUTCDATETIME(),\line         CONSTRAINT PK_TB_DD_CLIENTE       PRIMARY KEY (id_cliente),\line         CONSTRAINT UQ_TB_DD_CLIENTE_EMAIL UNIQUE (email),\line         CONSTRAINT UQ_TB_DD_CLIENTE_CPF   UNIQUE (cpf)\line     );\line END\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn O que explicar\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: A tabela de clientes utiliza um ID gerado automaticamente. E-mail e CPF s\u227?o \u250?nicos. A data de cadastro tem um valor padr\u227?o calculado pelo banco.\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Arquivo original: https://github.com/Wiclif06/DimDim-CP/blob/main/scripts/ddl_dimdim.sql\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn AP\u202?NDICE B | DDL \u8212? PAGAMENTOS\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 IF OBJECT_ID(N'dbo.TB_DD_PAGAMENTO', N'U') IS NULL\line BEGIN\line     CREATE TABLE dbo.TB_DD_PAGAMENTO (\line         id_pagamento  BIGINT         IDENTITY(1,1) NOT NULL,\line         id_cliente    BIGINT         NOT NULL,\line         descricao     NVARCHAR(200)  NOT NULL,\line         valor         DECIMAL(12,2)  NOT NULL,\line         metodo        VARCHAR(20)    NOT NULL,\line         status        VARCHAR(20)    NOT NULL CONSTRAINT DF_TB_DD_PAGAMENTO_STATUS DEFAULT 'PENDENTE',\line         dt_pagamento  DATETIME2(3)   NOT NULL CONSTRAINT DF_TB_DD_PAGAMENTO_DT DEFAULT SYSUTCDATETIME(),\line         CONSTRAINT PK_TB_DD_PAGAMENTO         PRIMARY KEY (id_pagamento),\line         CONSTRAINT FK_TB_DD_PAGAMENTO_CLIENTE FOREIGN KEY (id_cliente) REFERENCES dbo.TB_DD_CLIENTE (id_cliente),\line         CONSTRAINT CK_TB_DD_PAGAMENTO_VALOR   CHECK (valor > 0),\line         CONSTRAINT CK_TB_DD_PAGAMENTO_METODO  CHECK (metodo IN ('PIX', 'CARTAO', 'BOLETO')),\line         CONSTRAINT CK_TB_DD_PAGAMENTO_STATUS  CHECK (status IN ('PENDENTE', 'APROVADO', 'CANCELADO')),\line         INDEX IX_TB_DD_PAGAMENTO_CLIENTE NONCLUSTERED (id_cliente)\line     );\line END\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn O que explicar\par}
+{\pard\widctlpar\f0\fs22\i\cf2\li150\ri150\sb60\sa120\sl260\slmult1 FALA: A chave estrangeira relaciona pagamentos e clientes. O valor precisa ser maior que zero. M\u233?todo e status aceitam somente os valores previstos no sistema.\par}
+\page
+{\pard\widctlpar\f0\fs34\b\cf1\sa200\keepn AP\u202?NDICE C | RECUPERA\u199?\u195?O E FONTES\par}
+{\pard\widctlpar\fs4\cb3\sa180  \par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Regi\u227?o bloqueada / quota\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 No ensaio: brazilsouth teve RequestDisallowedByAzure; eastus e eastus2 tiveram RegionDoesNotAllowProvisioning; canadacentral funcionou. Isso registra o ensaio e n\u227?o garante disponibilidade futura.\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 az policy assignment list --disable-scope-strict-match true --query "[].\{nome:displayName,parametros:parameters\}" -o json\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Se precisar mudar regi\u227?o, primeiro exclua e aguarde o grupo da tentativa anterior. Depois use export LOCATION=<regiao-permitida> e repita o script 01. N\u227?o troque B1 por S1 automaticamente; isso altera o plano e o custo.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Aplica\u231?\u227?o n\u227?o sobe\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 source scripts/00-variaveis.sh\line az webapp log tail --resource-group "$RG" --name "$WEBAPP"\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Confirme que o DDL foi executado, que a conex\u227?o do banco est\u225? configurada e que o IP necess\u225?rio est\u225? liberado. Use Ctrl+C para sair da leitura cont\u237?nua de logs.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Sem telemetria\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Gere tr\u225?fego e aguarde. Confira a configura\u231?\u227?o do Application Insights no Web App sem expor credenciais. Se continuar vazio, diagnostique antes de iniciar a grava\u231?\u227?o definitiva.\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn KQL no workspace Log Analytics\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 AppRequests\line | where TimeGenerated > ago(1h)\line | project TimeGenerated, Name, ResultCode, DurationMs\line | order by TimeGenerated desc\line | take 30\par}
+{\pard\widctlpar\f1\fs17\cf1\cb4\li120\ri120\sb70\sa100\sl210\slmult0 AppDependencies\line | where TimeGenerated > ago(1h) and DependencyType has "SQL"\line | project TimeGenerated, Name, Target, DurationMs, Success\line | order by TimeGenerated desc\line | take 30\par}
+{\pard\widctlpar\f0\fs25\b\cf1\sb150\sa90\keepn Fontes\par}
+{\pard\widctlpar\f0\fs22\cf5\sa110\sl260\slmult1 Projeto e exemplos de API:\line https://github.com/Wiclif06/DimDim-CP\line https://github.com/Wiclif06/DimDim-CP/blob/main/docs/json-operacoes.md\line Monitoramento no App Service:\line https://learn.microsoft.com/en-us/azure/azure-monitor/app/azure-web-apps\line Modelo de dados e tabelas de telemetria:\line https://github.com/MicrosoftDocs/azure-monitor-docs/blob/main/articles/azure-monitor/app/data-model-complete.md\par}
+}
