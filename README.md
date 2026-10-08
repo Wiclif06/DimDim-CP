@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| **Grupo** | `[PREENCHER: nome do grupo]` |
+| **Repositório** | [Wiclif06/DimDim-CP](https://github.com/Wiclif06/DimDim-CP) |
 | **Vídeo com as evidências** | `[PREENCHER: link do vídeo]` |
 
 | Integrante | RM |
