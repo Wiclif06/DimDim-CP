@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head th:replace="~{fragments :: cabecalho(${titulo})}"></head>
+<body>
+<header th:replace="~{fragments :: topo}"></header>
+<main>
+    <div class="cabecalho-pagina">
+        <h1>Clientes</h1>
+        <a class="btn" th:href="@{/clientes/novo}">Novo cliente</a>
+    </div>
+
+    <div th:replace="~{fragments :: mensagens}"></div>
+
+    <div class="tabela-rolagem">
+        <table>
+            <thead>
+            <tr>
+                <th class="num">ID</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>CPF</th>
+                <th>Telefone</th>
+                <th>Cadastro</th>
+                <th><span class="sr-only">Ações</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="c : ${clientes}">
+                <td class="num" th:text="${c.id}">1</td>
+                <td th:text="${c.nome}">Nome</td>
+                <td th:text="${c.email}">email</td>
+                <td th:text="${c.cpf}">00000000000</td>
+                <td th:text="${c.telefone}">telefone</td>
+                <td th:text="${c.dtCadastroFormatado}">data</td>
+                <td>
+                    <div class="acoes">
+                        <a class="btn btn-neutro btn-pequeno" th:href="@{/clientes/{id}/editar(id=${c.id})}">Editar</a>
+                        <form th:action="@{/clientes/{id}/excluir(id=${c.id})}" method="post"
+                              onsubmit="return confirm('Excluir este cliente?');">
+                            <button class="btn btn-perigo btn-pequeno" type="submit">Excluir</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <p class="vazio" th:if="${#lists.isEmpty(clientes)}">Nenhum cliente cadastrado ainda.</p>
+    </div>
+</main>
+<footer th:replace="~{fragments :: rodape}"></footer>
+</body>
+</html>

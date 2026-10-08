@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head th:replace="~{fragments :: cabecalho(${titulo})}"></head>
+<body>
+<header th:replace="~{fragments :: topo}"></header>
+<main>
+    <h1 th:text="${titulo}">Cliente</h1>
+
+    <form class="formulario" th:action="${action}" th:object="${form}" method="post" novalidate>
+        <div class="aviso aviso-erro" role="alert" th:if="${#fields.hasGlobalErrors()}">
+            <span th:each="e : ${#fields.globalErrors()}" th:text="${e}">erro</span>
+        </div>
+
+        <div class="campo">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" th:field="*{nome}" maxlength="100" autocomplete="off">
+            <div class="erro-campo" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></div>
+        </div>
+
+        <div class="campo">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" th:field="*{email}" maxlength="120" autocomplete="off">
+            <div class="erro-campo" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+        </div>
+
+        <div class="campo">
+            <label for="cpf">CPF</label>
+            <input id="cpf" type="text" th:field="*{cpf}" maxlength="11" inputmode="numeric" autocomplete="off">
+            <div class="dica">Somente os 11 números. Use CPFs fictícios nos testes.</div>
+            <div class="erro-campo" th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"></div>
+        </div>
+
+        <div class="campo">
+            <label for="telefone">Telefone (opcional)</label>
+            <input id="telefone" type="text" th:field="*{telefone}" maxlength="20" autocomplete="off">
+            <div class="erro-campo" th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}"></div>
+        </div>
+
+        <div class="botoes">
+            <button class="btn" type="submit">Salvar</button>
+            <a class="btn btn-neutro" th:href="@{/clientes}">Cancelar</a>
+        </div>
+    </form>
+</main>
+<footer th:replace="~{fragments :: rodape}"></footer>
+</body>
+</html>

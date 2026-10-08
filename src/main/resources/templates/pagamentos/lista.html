@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head th:replace="~{fragments :: cabecalho(${titulo})}"></head>
+<body>
+<header th:replace="~{fragments :: topo}"></header>
+<main>
+    <div class="cabecalho-pagina">
+        <h1>Pagamentos</h1>
+        <a class="btn" th:href="@{/pagamentos/novo}">Novo pagamento</a>
+    </div>
+
+    <div th:replace="~{fragments :: mensagens}"></div>
+
+    <div class="tabela-rolagem">
+        <table>
+            <thead>
+            <tr>
+                <th class="num">ID</th>
+                <th>Cliente</th>
+                <th>Descrição</th>
+                <th class="num">Valor (R$)</th>
+                <th>Método</th>
+                <th>Status</th>
+                <th>Data</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="p : ${pagamentos}">
+                <td class="num" th:text="${p.id}">1</td>
+                <td th:text="${p.clienteNome}">Cliente</td>
+                <td th:text="${p.descricao}">Descrição</td>
+                <td class="num" th:text="${#numbers.formatDecimal(p.valor, 1, 'POINT', 2, 'COMMA')}">0,00</td>
+                <td th:text="${p.metodo}">PIX</td>
+                <td><span class="selo" th:classappend="'selo-' + ${p.status}" th:text="${p.status}">PENDENTE</span></td>
+                <td th:text="${p.dtPagamentoFormatado}">data</td>
+                <td>
+                    <div class="acoes">
+                        <a class="btn btn-neutro btn-pequeno" th:href="@{/pagamentos/{id}/editar(id=${p.id})}">Editar</a>
+                        <form th:action="@{/pagamentos/{id}/excluir(id=${p.id})}" method="post"
+                              onsubmit="return confirm('Excluir este pagamento?');">
+                            <button class="btn btn-perigo btn-pequeno" type="submit">Excluir</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <p class="vazio" th:if="${#lists.isEmpty(pagamentos)}">Nenhum pagamento registrado ainda.</p>
+    </div>
+</main>
+<footer th:replace="~{fragments :: rodape}"></footer>
+</body>
+</html>

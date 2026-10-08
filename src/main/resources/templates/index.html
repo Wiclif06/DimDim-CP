@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head th:replace="~{fragments :: cabecalho(${titulo})}"></head>
+<body>
+<header th:replace="~{fragments :: topo}"></header>
+<main>
+    <section class="heroi">
+        <div>
+            <h1>pague com dim dim.</h1>
+            <p>Cadastre clientes, registre pagamentos por Pix, cartão ou boleto e acompanhe tudo
+               gravado em um banco Azure SQL na nuvem.</p>
+            <a class="btn" th:href="@{/pagamentos/novo}">Registrar pagamento</a>
+            <a class="btn btn-neutro" th:href="@{/clientes/novo}">Novo cliente</a>
+        </div>
+        <div class="balao" aria-hidden="true">dim<br>dim</div>
+    </section>
+
+    <section class="numeros" aria-label="Resumo do banco">
+        <div class="numero">
+            <strong th:text="${totalClientes}">0</strong>
+            <span>clientes na tabela TB_DD_CLIENTE</span>
+            <a th:href="@{/clientes}">Ver clientes</a>
+        </div>
+        <div class="numero">
+            <strong th:text="${totalPagamentos}">0</strong>
+            <span>pagamentos na tabela TB_DD_PAGAMENTO</span>
+            <a th:href="@{/pagamentos}">Ver pagamentos</a>
+        </div>
+    </section>
+
+    <p class="atalhos">Prefere testar pela API? Abra o <a th:href="@{/swagger-ui.html}">Swagger</a>.</p>
+</main>
+<footer th:replace="~{fragments :: rodape}"></footer>
+</body>
+</html>

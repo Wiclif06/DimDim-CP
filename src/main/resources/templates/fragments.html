@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head th:fragment="cabecalho(titulo)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${titulo} + ' | DimDim'">DimDim</title>
+    <link rel="stylesheet" th:href="@{/css/dimdim.css}">
+</head>
+<body>
+<header class="topo" th:fragment="topo">
+    <div class="topo-conteudo">
+        <a class="marca" th:href="@{/}">
+            <span class="marca-bolha" aria-hidden="true">dim<br>dim</span>
+            <span>DimDim</span>
+        </a>
+        <nav class="menu" aria-label="Principal">
+            <a th:href="@{/clientes}">Clientes</a>
+            <a th:href="@{/pagamentos}">Pagamentos</a>
+            <a th:href="@{/swagger-ui.html}">API (Swagger)</a>
+        </nav>
+    </div>
+</header>
+<div th:fragment="mensagens">
+    <div class="aviso aviso-ok" role="status" th:if="${msg != null}" th:text="${msg}"></div>
+    <div class="aviso aviso-erro" role="alert" th:if="${erro != null}" th:text="${erro}"></div>
+</div>
+<footer class="rodape" th:fragment="rodape">
+    DimDim · CP5 DevOps Tools &amp; Cloud Computing · Web App Java + Azure SQL Database
+</footer>
+</body>
+</html>
