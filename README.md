@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | **Repositório** | [Wiclif06/DimDim-CP](https://github.com/Wiclif06/DimDim-CP) |
-| **Vídeo com as evidências** | `[PREENCHER: link do vídeo]` |
+| **Vídeo com as evidências** | [Assistir à demonstração](https://drive.google.com/file/d/1N33vjUIUsWiIVPD3CYctuz6RDhooLLiw/view?usp=sharing) |
 
 | Integrante | RM |
 |---|---|
